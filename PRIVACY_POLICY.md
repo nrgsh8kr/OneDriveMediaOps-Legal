@@ -4,13 +4,13 @@
 
 ## Overview
 
-OneDrive MediaOps is committed to protecting your privacy. This policy explains how we collect, use, and protect your data.
+OneDrive Photos & Videos Dupes is committed to protecting your privacy. This policy explains how we collect, use, and protect your data.
 
 ## Data Collection
 
 ### What We Collect
 
-OneDrive MediaOps collects minimal data to provide and improve our service:
+OneDrive Photos & Videos Dupes collects minimal data to provide and improve our service:
 
 - **OneDrive File Metadata**: Names, sizes, dates, and checksums for duplicate detection
 - **App Usage Analytics** (optional): Feature usage, scan statistics, error rates
@@ -27,7 +27,7 @@ OneDrive MediaOps collects minimal data to provide and improve our service:
 
 ### Firebase Integration
 
-When enabled, OneDrive MediaOps uses:
+When enabled, OneDrive Photos & Videos Dupes uses:
 
 - **Firebase Analytics**: Track app usage patterns and feature adoption
 - **Firebase Crashlytics**: Identify and fix app crashes
@@ -132,7 +132,7 @@ You have the right to:
 
 ### Android Permissions
 
-OneDrive MediaOps requests minimal permissions:
+OneDrive Photos & Videos Dupes requests minimal permissions:
 
 - **Internet**: Required for OneDrive API access
 - **No storage permissions**: Uses OneDrive API, not device storage
