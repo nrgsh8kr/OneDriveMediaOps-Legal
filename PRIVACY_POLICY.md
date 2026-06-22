@@ -43,6 +43,8 @@ When enabled, OneDrive Photos & Videos Dupes uses:
 
 **Analytics Events:**
 - `app_started` - App launch tracking
+- `login_attempt` - User tapped "Sign In with Microsoft" (no params)
+- `login_cancelled` - User backed out of the Microsoft sign-in screen (params: `phase`)
 - `login_success` / `login_failure` - Authentication events
 - `scan_started` / `scan_completed` - Duplicate detection operations
 - `files_deleted` - File deletion operations
