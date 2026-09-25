@@ -1,6 +1,6 @@
 # Privacy Policy
 
-**Last Updated:** December 2025
+**Last Updated:** September 2026
 
 ## Overview
 
@@ -10,18 +10,16 @@ OneDrive Photos & Videos Dupes is committed to protecting your privacy. This pol
 
 ### What We Collect
 
-OneDrive Photos & Videos Dupes collects minimal data to provide and improve our service:
-
-- **OneDrive File Metadata**: Names, sizes, dates, and checksums for duplicate detection
-- **App Usage Analytics** (optional): Feature usage, scan statistics, error rates
-- **Crash Reports** (optional): Stack traces, device info, app state when crashes occur
+- **OneDrive file metadata** (names, sizes, dates, thumbnails): read through Microsoft's API and processed **on your device** for duplicate detection. It is not sent to our servers.
+- **App usage analytics** (optional, on by default): sign-in, scan and delete steps, counts, durations and error types, sent to Google Firebase Analytics.
+- **Crash and error reports** (optional, on by default): stack traces, error messages and app state, sent to Google Firebase Crashlytics.
+- **Collected automatically with analytics and crash reports**: device model, OS and app version, language, Firebase app-instance and installation IDs, and approximate location (country/region) that Google derives from your IP address.
 
 ### What We DO NOT Collect
 
 - File contents (photos, videos, documents)
-- Personal information beyond OneDrive account authentication
-- Location data
-- Contacts or device identifiers
+- Your Microsoft password (sign-in is handled by Microsoft)
+- Precise location, contacts or advertising IDs
 
 ## Analytics & Crash Reports
 
@@ -35,26 +33,25 @@ When enabled, OneDrive Photos & Videos Dupes uses:
 ### User Control
 
 - **Default**: Analytics enabled (helps improve the app)
-- **Opt-out**: Settings → Privacy → Analytics & Crash Reports toggle
+- **Opt-out**: the Analytics & Crash Reports switch in the Privacy section of the scan settings screen (shown after you choose folders to scan). Data sent before you turn it off is not recalled.
 - **Debug builds**: Always enabled for development
 - **Release builds**: Respects user preference
 
 ### Data Collected
 
-**Analytics Events:**
-- `app_started` - App launch tracking
-- `login_attempt` - User tapped "Sign In with Microsoft" (no params)
-- `login_cancelled` - User backed out of the Microsoft sign-in screen (params: `phase`)
-- `login_success` / `login_failure` - Authentication events
-- `scan_started` / `scan_completed` - Duplicate detection operations
-- `files_deleted` - File deletion operations
-- `settings_changed` - User preference changes
+**Analytics events** (parameters are counts, durations, outcome codes and error types; never file names or contents):
+- App start and sign-in: `app_started`, `login_attempt`, `login_success`, `login_failure`, `login_cancelled`, `login_abandoned`, `silent_auth_completed`, `msal_init_failed`
+- Scans: `scan_started`, `scan_completed`, `scan_cancelled`, `scan_failed`, `scan_interrupted`, `fgs_start_blocked`
+- Deletion: `files_deleted`, `delete_failed`
+- Settings: `settings_changed`
+- Plus Firebase's automatic events (e.g. first open, session start, screen view, engagement time)
 
-**Crash Data:**
+**Crash data:**
 - Stack traces and error messages
-- Device model and OS version
-- App version and build number
-- Memory and CPU state at crash time
+- Device model, OS version, app version and build number
+- Memory and storage usage at crash time
+- Diagnostic keys (e.g. scan phase, folder count, demo mode, last sign-in outcome)
+- Firebase installation ID
 
 ## Data Storage
 
@@ -68,6 +65,7 @@ When enabled, OneDrive Photos & Videos Dupes uses:
 
 - **Analytics data**: Firebase (Google Cloud Platform)
 - **Crash reports**: Firebase Crashlytics
+- **Analysis copies**: analytics and crash data are exported to our Google Cloud (BigQuery) project
 - **No file contents**: Never transmitted or stored remotely
 
 ## Third-Party Services
@@ -89,16 +87,17 @@ When enabled, OneDrive Photos & Videos Dupes uses:
 | Data Type | Retention Period | Location |
 |-----------|------------------|----------|
 | Local cache | Until app uninstalled | Device only |
-| Analytics | 14 months (configurable) | Firebase |
+| Analytics | Firebase's configured retention period | Firebase |
 | Crash reports | 90 days | Firebase Crashlytics |
-| Authentication tokens | Until logout/expiry | Device only |
+| Analytics and crash exports | Until we delete them | Our BigQuery project |
+| Authentication tokens | Until sign-out/expiry | Device only |
 
 ## Your Rights
 
 You have the right to:
 
-1. **Opt-out**: Disable analytics and crash reporting anytime
-2. **Delete**: Remove all local data by uninstalling the app
+1. **Opt-out**: Disable analytics and crash reporting anytime (Analytics & Crash Reports switch, scan settings screen)
+2. **Delete**: Remove all local data by uninstalling the app, and ask us (info@nrgsh8kr.com) to delete analytics and crash data linked to your install
 3. **Access**: Request information about collected data
 4. **Transparency**: Understand how your data is used
 
@@ -111,17 +110,12 @@ You have the right to:
 - Secure HTTPS connections for all API calls
 - No plaintext storage of sensitive data
 
-### Open Source
-
-- Source code available at: https://github.com/nrgsh8kr/OneDriveMediaOps
-- Transparent implementation, open to security review
-
 ## Privacy by Design
 
 ### Minimal Collection
 
 - Only collect data necessary for app functionality
-- No tracking of individual users
+- No advertising, ad IDs or cross-app tracking
 - No selling of user data
 
 ### User Control
@@ -152,7 +146,7 @@ OneDrive Photos & Videos Dupes requests minimal permissions:
 
 We may update this privacy policy periodically. Changes will be:
 
-1. Posted in the app (Settings → Privacy → View Privacy Policy)
+1. Posted in the app (scan settings screen → Privacy → View Privacy Policy)
 2. Documented in this file with updated date
 3. Communicated in release notes for major changes
 
@@ -201,10 +195,10 @@ adb shell pm clear com.onedrive.mediaops
 ✅ **Minimal data collection** - Only what's necessary  
 ✅ **User control** - Opt-out anytime  
 ✅ **Local processing** - Files never leave device  
-✅ **Transparent** - Open source code  
+✅ **Transparent** - Every analytics event is listed above  
 ✅ **Secure** - OAuth 2.0 authentication  
 ✅ **No selling data** - Never, ever  
 
 ---
 
-**Your privacy matters.** If you have concerns or suggestions, please open an issue on GitHub.
+**Your privacy matters.** If you have concerns or suggestions, please email info@nrgsh8kr.com.
