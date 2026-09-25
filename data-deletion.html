@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Deletion - OneDrive MediaOps</title>
+    <title>Data Deletion - OneDrive Photos &amp; Videos Dupes</title>
     <style>
         * {
             margin: 0;
@@ -117,138 +117,58 @@
 </head>
 <body>
     <div class="container">
-        <h1>Data Deletion Request</h1>
-        <p class="subtitle">OneDrive MediaOps - User Data Deletion</p>
+        <h1>Data Deletion</h1>
+        <p class="subtitle">OneDrive Photos &amp; Videos Dupes (also listed as OneDrive MediaOps) &middot; applies to app version 1.1.48 and earlier</p>
 
         <div class="success">
-            <strong>✓ Privacy First:</strong> OneDrive MediaOps does not create user accounts and stores minimal data locally on your device. Most data is automatically deleted when you uninstall the app.
+            <strong>In short:</strong> the app does not create an account, and your photos, videos and file contents are never sent to us. Duplicate detection runs on your device. The only data that leaves your device is optional analytics and crash reports sent to Google Firebase, which are on by default and which you can turn off in the app.
         </div>
 
-        <h2>What Data We Collect</h2>
-        
+        <h2>What data exists, and where</h2>
         <table>
-            <thead>
-                <tr>
-                    <th>Data Type</th>
-                    <th>Storage Location</th>
-                    <th>Retention Period</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>File Metadata Cache</strong><br>Names, sizes, dates, checksums</td>
-                    <td>Your device only</td>
-                    <td>Until app uninstalled</td>
-                </tr>
-                <tr>
-                    <td><strong>Scan Results</strong><br>Duplicate detection history</td>
-                    <td>Your device only</td>
-                    <td>Until app uninstalled</td>
-                </tr>
-                <tr>
-                    <td><strong>App Preferences</strong><br>Settings, theme choices</td>
-                    <td>Your device only</td>
-                    <td>Until app uninstalled</td>
-                </tr>
-                <tr>
-                    <td><strong>Authentication Tokens</strong><br>Microsoft OAuth tokens</td>
-                    <td>Your device (managed by Microsoft)</td>
-                    <td>Until logout or expiry</td>
-                </tr>
-            </tbody>
+            <tr><th>Data</th><th>Where it is kept</th><th>How long</th></tr>
+            <tr><td><strong>Scan results, cached file details, app settings</strong></td><td>Your device only</td><td>Until you clear the app's storage or uninstall it</td></tr>
+            <tr><td><strong>Microsoft sign-in token</strong></td><td>Your device, managed by Microsoft's sign-in library</td><td>Until you sign out, uninstall, or it expires</td></tr>
+            <tr><td><strong>Analytics</strong> (app usage events, device model, OS and app version, Firebase app-instance ID, approximate country/region derived from IP)</td><td>Google Firebase Analytics, and an export copy in our Google Cloud (BigQuery) project</td><td>Firebase: its configured retention period. Our export copy: until we delete it</td></tr>
+            <tr><td><strong>Crash and error reports</strong> (stack traces, error messages, device and app details, Firebase installation ID)</td><td>Google Firebase Crashlytics, and an export copy in our BigQuery project</td><td>Crashlytics: 90 days. Our export copy: until we delete it</td></tr>
         </table>
+        <p>None of this is linked to your name, email address or Microsoft account.</p>
 
-        <div class="important">
-            <strong>Important:</strong> We do NOT collect, store, or transmit:
-            <ul style="margin-top: 10px;">
-                <li>Your actual files (photos, videos, documents)</li>
-                <li>Personal information beyond OneDrive authentication</li>
-                <li>Location data</li>
-                <li>Contact information</li>
-                <li>Device identifiers for tracking</li>
-            </ul>
-        </div>
+        <h2>How to delete your data</h2>
 
-        <h2>How to Delete Your Data</h2>
-
-        <h3>Option 1: Automatic Deletion (Recommended)</h3>
-        <p>Simply uninstall the OneDrive MediaOps app from your device. This will automatically delete:</p>
+        <h3>1. Data on your device</h3>
         <ul>
-            <li>All cached file metadata</li>
-            <li>All scan results</li>
-            <li>All app preferences and settings</li>
-            <li>All locally stored authentication tokens</li>
+            <li><strong>Everything:</strong> uninstall the app, or on Android go to <em>Settings &rarr; Apps &rarr; OneDrive Photos &amp; Videos Dupes &rarr; Storage &amp; cache &rarr; Clear storage</em>.</li>
+            <li><strong>Your Microsoft sign-in only:</strong> tap <em>Sign Out</em> on the app's main screen.</li>
         </ul>
-        <p><strong>On Android:</strong> Settings → Apps → OneDrive MediaOps → Uninstall</p>
 
-        <h3>Option 2: Clear Data (Keep App Installed)</h3>
-        <p>To delete local data without uninstalling:</p>
-        <ol style="margin-left: 30px; margin-top: 10px;">
-            <li>Open OneDrive MediaOps app</li>
-            <li>Go to Settings (gear icon)</li>
-            <li>Tap "Clear Cache" to remove file metadata</li>
-            <li>Tap "Clear Scan History" to remove duplicate detection results</li>
-            <li>Tap "Sign Out" to remove authentication tokens</li>
-        </ol>
-        <p style="margin-top: 10px;"><em>Or use Android system settings:</em></p>
-        <p>Settings → Apps → OneDrive MediaOps → Storage → Clear Data</p>
+        <h3>2. Stop sending analytics and crash reports</h3>
+        <p>Turn off the <em>Analytics &amp; Crash Reports</em> switch in the Privacy section at the bottom of the scan settings screen (shown after you choose folders to scan). Nothing further is sent while it is off. Data already sent is not recalled by switching it off.</p>
 
-        <h3>Option 3: Request Data Information</h3>
-        <p>To request information about what data we have stored:</p>
+        <h3>3. Analytics and crash data already sent</h3>
+        <div class="important">
+            <strong>Current limitation (version 1.1.48 and earlier):</strong> these records are identified only by random IDs that the app does not show you, not by your name or email. That means we cannot find one person's records from an email address, so we cannot currently delete them on request. Uninstalling the app resets the IDs, so records sent before that are no longer linked to your device, and Firebase removes them at the end of its retention period.
+        </div>
+        <p>An upcoming version adds a way to copy your diagnostic ID in the app, so that you can send it to us and we can delete the matching records, and a button to reset the ID and delete analytics data still on your device. This page will be updated when it is released.</p>
 
         <div class="contact-box">
-            <h3>Email Data Deletion Request</h3>
-            <p><strong>To:</strong> <a href="mailto:info@nrgsh8kr.com?subject=Data%20Request%20-%20OneDrive%20MediaOps" class="email-link">info@nrgsh8kr.com</a></p>
-            <p><strong>Subject:</strong> Data Request - OneDrive MediaOps</p>
-            <p><strong>Include in your email:</strong></p>
-            <ul style="margin-top: 10px;">
-                <li>Your OneDrive account email (for identification)</li>
-                <li>Type of request (access, deletion information, etc.)</li>
-                <li>Device model and app version (optional)</li>
-            </ul>
-            <p style="margin-top: 15px;"><strong>Response time:</strong> We will respond within 7 business days.</p>
+            <h3>Questions or requests</h3>
+            <p><strong>Email:</strong> <a href="mailto:info@nrgsh8kr.com?subject=Data%20Request%20-%20OneDrive%20Photos%20%26%20Videos%20Dupes" class="email-link">info@nrgsh8kr.com</a></p>
+            <p><strong>Subject:</strong> Data Request - OneDrive Photos &amp; Videos Dupes</p>
+            <p>We respond within 7 business days.</p>
         </div>
 
-        <h2>Types of Data Deleted</h2>
-
-        <h3>✓ Data That Will Be Deleted:</h3>
+        <h2>Data we do not hold</h2>
         <ul>
-            <li><strong>All local cache data:</strong> File names, sizes, modification dates, checksums</li>
-            <li><strong>Scan history:</strong> Duplicate detection results and settings</li>
-            <li><strong>App preferences:</strong> Theme, notification settings, algorithm choices</li>
-            <li><strong>Authentication state:</strong> Login session and OAuth tokens</li>
+            <li><strong>Your OneDrive files:</strong> stored by Microsoft.</li>
+            <li><strong>Your Microsoft account data:</strong> managed under <a href="https://privacy.microsoft.com" class="email-link">Microsoft's privacy policy</a>.</li>
+            <li><strong>File contents:</strong> never sent to us or stored by us.</li>
         </ul>
 
-        <h3>✗ Data We Cannot Delete (We Don't Have It):</h3>
-        <ul>
-            <li><strong>Your OneDrive files:</strong> Stored by Microsoft, not by our app</li>
-            <li><strong>Microsoft account data:</strong> Managed by Microsoft's privacy policies</li>
-            <li><strong>File contents:</strong> Never transmitted to or stored by our app</li>
-        </ul>
-
-        <h2>Retention Period</h2>
-        <p>After deletion request:</p>
-        <ul>
-            <li><strong>Immediate:</strong> Local device data (via uninstall or clear data)</li>
-        </ul>
-
-        <h2>Your Privacy Rights</h2>
-        <ul>
-            <li><strong>Access:</strong> Request information about what data we have stored</li>
-            <li><strong>Deletion:</strong> Request deletion of your data (as outlined above)</li>
-            <li><strong>Transparency:</strong> Review our full <a href="https://github.com/nrgsh8kr/OneDriveMediaOps/blob/main/legal/PRIVACY_POLICY.md" class="email-link">Privacy Policy</a></li>
-        </ul>
-
-        <h2>Questions or Concerns?</h2>
-        <p>For questions about data deletion or privacy:</p>
-        <ul>
-            <li><strong>Email:</strong> <a href="mailto:info@nrgsh8kr.com" class="email-link">info@nrgsh8kr.com</a></li>
-            <li><strong>Privacy Policy:</strong> <a href="https://nrgsh8kr.github.io/OneDriveMediaOps-Legal/" class="email-link">View Privacy Policy</a></li>
-        </ul>
+        <p>Full details: <a href="https://nrgsh8kr.github.io/OneDriveMediaOps-Legal/PRIVACY_POLICY" class="email-link">Privacy Policy</a>.</p>
 
         <div class="footer">
-            <p><strong>OneDrive MediaOps</strong> | Privacy-First OneDrive Media Management</p>
-            <p>Last Updated: December 2025</p>
+            <p>OneDrive Photos &amp; Videos Dupes &middot; Last Updated: September 2026</p>
         </div>
     </div>
 </body>
