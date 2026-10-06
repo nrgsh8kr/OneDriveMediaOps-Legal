@@ -13,7 +13,7 @@ OneDrive Photos & Videos Dupes is committed to protecting your privacy. This pol
 - **OneDrive file metadata** (names, sizes, dates, thumbnails): read through Microsoft's API and processed **on your device** for duplicate detection. It is not sent to our servers.
 - **App usage analytics** (optional, on by default): sign-in, scan and delete steps, counts, durations and error types, sent to Google Firebase Analytics.
 - **Crash and error reports** (optional, on by default): stack traces, error messages and app state, sent to Google Firebase Crashlytics.
-- **Collected automatically with analytics and crash reports**: device model, OS and app version, language, Firebase app-instance and installation IDs, and approximate location (country/region) that Google derives from your IP address.
+- **Collected automatically with analytics and crash reports**: device model, OS and app version, language, Firebase app-instance and installation IDs (from app version 1.1.49 the app-instance ID, shown in the app as your **diagnostic ID**, is also attached to crash reports), and approximate location (country/region) that Google derives from your IP address.
 
 ### What We DO NOT Collect
 
@@ -51,7 +51,7 @@ When enabled, OneDrive Photos & Videos Dupes uses:
 - Device model, OS version, app version and build number
 - Memory and storage usage at crash time
 - Diagnostic keys (e.g. scan phase, folder count, demo mode, last sign-in outcome)
-- Firebase installation ID
+- Firebase installation ID, and (from 1.1.49) your diagnostic ID
 
 ## Data Storage
 
@@ -97,9 +97,10 @@ When enabled, OneDrive Photos & Videos Dupes uses:
 You have the right to:
 
 1. **Opt-out**: Disable analytics and crash reporting anytime (Analytics & Crash Reports switch, scan settings screen)
-2. **Delete**: Remove all local data by uninstalling the app, and ask us (info@nrgsh8kr.com) to delete analytics and crash data linked to your install
-3. **Access**: Request information about collected data
-4. **Transparency**: Understand how your data is used
+2. **Delete on your device**: tap **Delete my analytics data** (Privacy section of the scan settings screen, app version 1.1.49+). It turns analytics and crash reporting off, deletes analytics data still on your device and resets your diagnostic ID. Uninstalling the app removes all local data.
+3. **Delete data already sent**: tap **Copy diagnostic ID** first (same place), then email the ID to info@nrgsh8kr.com. We then delete the analytics data and crash reports that carry it: from Google Analytics, from Firebase Crashlytics (Google completes this within 30 days of our request), and from our BigQuery copies. Data sent by app versions before 1.1.49 is not linked to the ID and cannot be matched.
+4. **Access**: Request information about collected data
+5. **Transparency**: Understand how your data is used
 
 ## Security
 
