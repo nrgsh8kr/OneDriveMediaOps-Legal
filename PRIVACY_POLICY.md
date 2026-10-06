@@ -1,6 +1,6 @@
 # Privacy Policy
 
-**Last Updated:** September 2026
+**Last Updated:** October 2026
 
 ## Overview
 
@@ -11,7 +11,7 @@ OneDrive Photos & Videos Dupes is committed to protecting your privacy. This pol
 ### What We Collect
 
 - **OneDrive file metadata** (names, sizes, dates, thumbnails): read through Microsoft's API and processed **on your device** for duplicate detection. It is not sent to our servers.
-- **App usage analytics** (optional, on by default): sign-in, scan and delete steps, counts, durations and error types, sent to Google Firebase Analytics.
+- **App usage analytics** (optional, on by default): sign-in, scan and delete steps, counts, durations and error types, and whether the Google Play rating prompt was requested (Google does not tell us whether or how you rated), sent to Google Firebase Analytics.
 - **Crash and error reports** (optional, on by default): stack traces, error messages and app state, sent to Google Firebase Crashlytics.
 - **Collected automatically with analytics and crash reports**: device model, OS and app version, language, Firebase app-instance and installation IDs (from app version 1.1.49 the app-instance ID, shown in the app as your **diagnostic ID**, is also attached to crash reports), and approximate location (country/region) that Google derives from your IP address.
 
@@ -43,8 +43,11 @@ When enabled, OneDrive Photos & Videos Dupes uses:
 - App start and sign-in: `app_started`, `login_attempt`, `login_success`, `login_failure`, `login_cancelled`, `login_abandoned`, `silent_auth_completed`, `msal_init_failed`
 - Scans: `scan_started`, `scan_completed`, `scan_cancelled`, `scan_failed`, `scan_interrupted`, `fgs_start_blocked`
 - Deletion: `files_deleted`, `delete_failed`
+- Google Play rating prompt (from 1.1.50): `review_prompt_requested` (with the app version code and the device's model codename, e.g. `husky`), `review_flow_result`, `review_flow_completed`
 - Settings: `settings_changed`
 - Plus Firebase's automatic events (e.g. first open, session start, screen view, engagement time)
+
+**Google Play reviews:** to understand the feedback in Google Play reviews, we may compare a review's app version, device and language, which Google provides with each review, to the analytics data above. Google does not give us reviewers' identities, and we do not try to obtain them.
 
 **Crash data:**
 - Stack traces and error messages
