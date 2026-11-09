@@ -6,7 +6,7 @@ Official legal documents for the OneDrive MediaOps Android application.
 
 - **[Privacy Policy](https://nrgsh8kr.github.io/OneDriveMediaOps-Legal/PRIVACY_POLICY)** - How we collect, use, and protect your data
 - **[Data Deletion](data-deletion.html)** - How to request data deletion
-- **[Terms of Service](TERMS_OF_SERVICE.md)** - The terms for using the app
+- **[Terms of Service](https://nrgsh8kr.github.io/OneDriveMediaOps-Legal/TERMS_OF_SERVICE)** - The terms for using the app
 
 ## 🔗 Quick Links
 
