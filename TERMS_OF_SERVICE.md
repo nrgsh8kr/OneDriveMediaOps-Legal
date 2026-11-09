@@ -2,7 +2,7 @@
 
 **Last Updated:** November 2026
 
-These terms apply to the OneDrive Photos & Videos Dupes Android app ("the app"). By installing or using the app, you agree to them. If you do not agree, do not use the app.
+These terms apply to the OneDrive Photos & Videos Dupes Android app ("the app"), provided by nrgsh8kr ("we", "us"). By installing or using the app, you agree to them. If you do not agree, do not use the app.
 
 ## What the App Does
 
@@ -40,6 +40,10 @@ The app is provided "as is" and "as available", without warranties of any kind, 
 ## Limitation of Liability
 
 To the extent the law allows, we are not liable for any loss of files or data, or for any indirect or consequential loss, arising from your use of the app. Nothing in these terms limits rights you have under consumer protection laws that cannot be waived.
+
+## Governing Law
+
+These terms are governed by the laws of the United States, without regard to conflict-of-law rules. If you live outside the United States, this does not take away the protection of mandatory consumer laws of the country where you live.
 
 ## Changes and Ending Use
 
