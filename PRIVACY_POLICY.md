@@ -41,9 +41,11 @@ When enabled, OneDrive Photos & Videos Dupes uses:
 ### Data Collected
 
 **Analytics events** (parameters are counts, durations, outcome codes and error types; never file names or contents):
-- App start and sign-in: `app_started`, `login_attempt`, `login_success`, `login_failure`, `login_cancelled`, `login_abandoned`, `silent_auth_completed`, `msal_init_failed`
-- Scans: `scan_started`, `scan_completed`, `scan_cancelled`, `scan_failed`, `scan_interrupted`, `fgs_start_blocked`
-- Deletion: `files_deleted`, `delete_failed`
+- App start and sign-in: `app_started`, `login_attempt`, `login_success`, `login_failure`, `login_cancelled`, `login_abandoned`, `silent_auth_completed`, `msal_init_failed`, `login_ready` (from 1.1.52), `login_auto_retry` and `login_stop_shown` (from 1.1.53)
+- Steps before a scan (from 1.1.53): `main_viewed`, `folder_browser_opened`, `folder_list_loaded`, `scan_settings_viewed`, `scan_requested` (counts only, never folder names)
+- Scans: `scan_started`, `scan_completed`, `scan_cancelled`, `scan_failed`, `scan_interrupted`, `fgs_start_blocked`, `scan_folders_skipped` and `scan_process_exit` (from 1.1.51)
+- Results and selection (from 1.1.52): `results_viewed`, `results_lost`, `smart_select_used`, `select_all_used`, `selection_cleared`
+- Deletion: `files_deleted`, `delete_failed`, `delete_confirm_shown` and `delete_confirm_cancelled` (from 1.1.52)
 - Google Play rating prompt (from 1.1.50): `review_prompt_requested` (with the app version code and the device's model codename, e.g. `husky`), `review_flow_result`, `review_flow_completed`
 - Settings: `settings_changed`
 - Plus Firebase's automatic events (e.g. first open, session start, screen view, engagement time)
