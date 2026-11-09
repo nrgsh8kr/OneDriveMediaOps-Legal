@@ -1,6 +1,6 @@
 # Privacy Policy
 
-**Last Updated:** October 2026
+**Last Updated:** November 2026
 
 ## Overview
 
@@ -14,6 +14,7 @@ OneDrive Photos & Videos Dupes is committed to protecting your privacy. This pol
 - **App usage analytics** (optional, on by default): sign-in, scan and delete steps, counts, durations and error types, and whether the Google Play rating prompt was requested (Google does not tell us whether or how you rated), sent to Google Firebase Analytics.
 - **Crash and error reports** (optional, on by default): stack traces, error messages and app state, sent to Google Firebase Crashlytics.
 - **Collected automatically with analytics and crash reports**: device model, OS and app version, language, Firebase app-instance and installation IDs (from app version 1.1.49 the app-instance ID, shown in the app as your **diagnostic ID**, is also attached to crash reports), and approximate location (country/region) that Google derives from your IP address.
+- **Connection details at sign-in** (from app version 1.1.53): when a sign-in fails or is cancelled, the type of connection (for example Wi-Fi or mobile data, and whether a VPN is in use), whether Android had confirmed the connection reaches the internet, and the kind of network error (for example a failed name lookup or a timeout). No network names, IP addresses or other identifiers.
 
 ### What We DO NOT Collect
 
