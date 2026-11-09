@@ -43,7 +43,7 @@ To the extent the law allows, we are not liable for any loss of files or data, o
 
 ## Governing Law
 
-These terms are governed by the laws of the United States, without regard to conflict-of-law rules. If you live outside the United States, this does not take away the protection of mandatory consumer laws of the country where you live.
+These terms are governed by the laws of the State of California, United States, without regard to conflict-of-law rules. If you live elsewhere, this does not take away the protection of mandatory consumer laws of the place where you live.
 
 ## Changes and Ending Use
 
