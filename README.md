@@ -4,7 +4,7 @@ Official legal documents for the OneDrive MediaOps Android application.
 
 ## 📄 Documents
 
-- **[Privacy Policy](PRIVACY_POLICY.md)** - How we collect, use, and protect your data
+- **[Privacy Policy](https://nrgsh8kr.github.io/OneDriveMediaOps-Legal/PRIVACY_POLICY)** - How we collect, use, and protect your data
 - **[Data Deletion](data-deletion.html)** - How to request data deletion
 - **[Terms of Service](TERMS_OF_SERVICE.md)** - The terms for using the app
 
@@ -21,7 +21,7 @@ OneDrive MediaOps is an Android app that helps you find and remove duplicate pho
 **Key Privacy Features:**
 - ✓ No user accounts created (sign-in is handled by Microsoft)
 - ✓ Duplicate detection runs locally on your device; your files and their contents are never sent to us
-- ✓ Optional analytics and crash reports (Google Firebase), on by default, which you can turn off in the app — see the [Privacy Policy](PRIVACY_POLICY.md) for exactly what is collected
+- ✓ Optional analytics and crash reports (Google Firebase), on by default, which you can turn off in the app — see the [Privacy Policy](https://nrgsh8kr.github.io/OneDriveMediaOps-Legal/PRIVACY_POLICY) for exactly what is collected
 
 ## �� Contact
 
@@ -31,4 +31,4 @@ Questions or concerns about privacy?
 
 ---
 
-*Last Updated: September 2026*
+*Last Updated: November 2026*
